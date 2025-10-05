@@ -1,0 +1,12 @@
+[Unit]
+Description=Check internet in IP range
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/inet.sh
+Restart=always
+Slice=custom-check.slice
+
+[Install]
+WantedBy=multi-user.target
